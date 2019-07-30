@@ -51,6 +51,8 @@ namespace pdf24sdPrinter
             //context.Response.AppendHeader("Access-Control-Allow-Method", "post");//后台跨域请求设置，通常设置为配置文件
             context.Response.ContentType = "text/plain;charset=UTF-8";//告诉客户端返回的ContentType类型为纯文本格式，编码为UTF-8
             context.Response.AddHeader("Content-type", "text/plain");//添加响应头信息
+            context.Response.AddHeader("Access-Control-Allow-Origin", "*");//添加响应头信息
+            context.Response.AddHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");//添加响应头信息
             context.Response.ContentEncoding = Encoding.UTF8;
             string returnObj = null;//定义返回客户端的信息
             if (request.HttpMethod == "POST" && request.InputStream != null)
